@@ -40,9 +40,6 @@ def main():
         print "No content clipboard! Exiting!"
         sys.exit(10)
 
-    data = "192.0.2.0/24, 198.51.100.0/24 en 203.0.113.0/24, 123.3.4.5, 256.1.2.3"
-    clipboard.copy(data)
-
     res = []
     res = getip(clipboard.paste())
 
@@ -56,10 +53,15 @@ def main():
             else:
                 ips[ip]['COUNT'] += 1
 
-        # for ip in ips:
-        #     print ips[ip]['COUNT'], ip
     else:
         print "No IP's found!"
+        sys.exit(20)
+
+    print "Unique IP addresses: (count of them)"
+    for ip in ips:
+        print ip, str(ips[ip]['COUNT'])
+
+
 
 if __name__ == '__main__':
 
