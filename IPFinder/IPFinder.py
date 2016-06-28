@@ -6,12 +6,6 @@ __author__ = 'tjongeri'
 import logging
 import sys
 
-try:
-    import clipboard
-
-except ImportError:
-    raise "You have not install clipboard, please install it using PIP!"
-
 
 def getip(searching):
     import re
@@ -64,6 +58,12 @@ def main():
 
 
 if __name__ == '__main__':
+
+    try:
+        import clipboard
+
+    except ImportError:
+        raise "You have not install clipboard, please install it using PIP!"
 
     # Production syntax for logging
     logging.basicConfig(stream=sys.stderr,
