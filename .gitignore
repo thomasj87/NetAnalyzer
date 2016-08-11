@@ -1,2 +1,5 @@
 *.pyc
 .idea
+cli_collector/example/output/
+cli_collector/test.py
+cli_collector/cli_collector.py

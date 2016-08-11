@@ -1,0 +1,27 @@
+{
+  "SETTINGS" : {
+    "PATH": ["192.168.1.1", "192.168.1.2"],
+    "SSH_COMMAND": "ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no USER@HOST -p PORT",
+    "TELNET_COMMAND": "telnet HOST PORT",
+    "MYSQL_SERVER": "127.0.0.1",
+    "MYSQL_DATABASE": "ziggo_test",
+    "MYSQL_USER": "test",
+    "MYSQL_PASSWORD": "test",
+    "MYSQL_PORT": 3306,
+    "TIMEOUT": 20
+    },
+  "JUMPSERVERS" : {
+    "192.168.1.1": {
+      "CONNECTION_TYPE": "SSH_TUNNEL",
+      "USERNAME": "test",
+      "RSA_KEY_FILE": "~/.ssh/id_rsa",
+      "PORT": 22
+    },
+    "192.168.1.2": {
+      "CONNECTION_TYPE": "SSH_TUNNEL",
+      "USERNAME": "test",
+      "RSA_KEY_FILE": "~/.ssh/id_rsa",
+      "PORT": 22
+    }
+  }
+}
