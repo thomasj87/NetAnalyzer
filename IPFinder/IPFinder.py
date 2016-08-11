@@ -51,11 +51,19 @@ def main():
         print "No IP's found!"
         sys.exit(20)
 
+    count_sort = {}
     print "Unique IP addresses: (count of them)"
     for ip in ips:
         print ip, str(ips[ip]['COUNT'])
+        count_sort[ip] = ips[ip]['COUNT']
 
+    print ''
+    print ''
+    print ''
+    print ''
 
+    for w in sorted(count_sort, key=count_sort.get, reverse=True):
+      print w, count_sort[w]
 
 if __name__ == '__main__':
 
