@@ -23,18 +23,26 @@ def find_hex(input_data):
 
 def main():
 
-    import sys
-
     if len(sys.argv) == 2:
         with open(sys.argv[1]) as input_file:
             hex = find_hex(input_file.read().splitlines())
 
         for l in hex:
-            print l
+            sys.stdout.write(l)
     else:
-        print 'Not sufficient arguments!'
-        print 'Help: hex.py <file>'
-        print 'Send to PCAP: hex.py <file> | text2pcap -o dec - output.pcap'
+        sys.stdout.write('Not sufficient arguments!\n')
+        sys.stdout.write('Help: hex.py <file>\n')
+        sys.stdout.write('Send to PCAP: hex.py <file> | text2pcap -o dec - output.pcap\n')
+
+    try:
+        sys.stdout.close()
+    except:
+        pass
+    try:
+        sys.stderr.close()
+    except:
+        pass
+
 
 if __name__ == '__main__':
 
